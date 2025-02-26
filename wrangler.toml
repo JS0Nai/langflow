@@ -1,0 +1,14 @@
+name = "langflow-worker"
+main = "cloudflare/worker.js"
+compatibility_date = "2025-02-26"
+
+[vars]
+TUNNEL_HOSTNAME = "MacStudio"
+APP_DOMAIN = "langflow.amodel.org"
+
+[site]
+bucket = "./cloudflare/dist"
+
+# Bindings to connect back to Mac Studio tunnel
+[env.production]
+route = "langflow.amodel.org/*"
